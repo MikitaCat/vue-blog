@@ -1,10 +1,11 @@
 <template>
     <MyWrapper>
+        {{ post.title }}
         <form>
             <h3>Create a new posts</h3>
             <div>
                 <label>Post Title</label>
-                <input type="text" />
+                <input type="text" :value="post.title" @input="(e) => post.title = e.target.value" />
             </div>
             <div>
                 <label>Post Body</label>
@@ -19,6 +20,11 @@
 
 <script setup>
 import MyWrapper from '@/components/MyWrapper.vue';
+import { reactive } from 'vue';
+
+const post = reactive({
+    title: "title"
+})
 </script>
 
 <style lang="scss" scoped>
