@@ -24,50 +24,42 @@ defineProps({
 </script>
 
 <style lang="scss" scoped>
-.wrapper {
-    margin: 2rem;
-    background: #fff;
-    margin-bottom: 2rem;
-    border-radius: 1rem;
-    overflow: hidden;
+.header {
+    font-size: 12px;
+    background: #0284c7;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    font-weight: 300;
 
-    .header {
-        font-size: 12px;
-        background: #0284c7;
-        padding: 1rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: #fff;
-        font-weight: 300;
-
-        button {
-            border-radius: 30px;
-        }
-
-        div .del {
-            font-size: 20px;
-            padding: 3px;
-            background: #fff;
-            color: #ef4444;
-        }
-
-        div .save {
-            font-size: 20px;
-            padding: 3px;
-            background: #fff;
-            color: #22c55e;
-            margin-left: 10px;
-        }
+    button {
+        border-radius: 30px;
     }
 
-    h1 {
-        padding: 1rem;
+    div .del {
+        font-size: 20px;
+        padding: 3px;
+        background: #fff;
+        color: #ef4444;
     }
 
-    p {
-        padding: 0 1rem 1rem;
-        font-weight: 300;
+    div .save {
+        font-size: 20px;
+        padding: 3px;
+        background: #fff;
+        color: #22c55e;
+        margin-left: 10px;
     }
+}
+
+h1 {
+    padding: 1rem;
+}
+
+p {
+    padding: 0 1rem 1rem;
+    font-weight: 300;
 }
 </style>

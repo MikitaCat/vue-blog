@@ -1,4 +1,5 @@
 <script setup>
+import MyWrapper from '@/components/MyWrapper.vue';
 import PostItem from '@/components/PostItem.vue';
 
 const posts = [
@@ -39,18 +40,9 @@ const posts = [
 
 <template>
   <div v-for="post in posts" v-bind:key="post.id">
-    <div class="wrapper">
+    <MyWrapper>
       <PostItem :post="post" />
-    </div>
+    </MyWrapper>
   </div>
 </template>
 
-<style lang="scss" scoped>
-.wrapper {
-  margin: 2rem;
-  background: #fff;
-  margin-bottom: 2rem;
-  border-radius: 1rem;
-  overflow: hidden;
-}
-</style>
