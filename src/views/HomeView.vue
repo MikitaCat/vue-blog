@@ -1,5 +1,38 @@
 <script setup>
-
+const posts = [
+  {
+    id: 1,
+    title: "lorem",
+    body: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero ea deserunt itaque non illum error hic tempora, magni consequatur enim, dolorum laboriosam labore veniam tenetur. Placeat quasi eos mollitia soluta",
+    author: "Name Surname",
+    created_at: "12/30/2022",
+    isSaved: false,
+  },
+  {
+    id: 2,
+    title: "lorem 2",
+    body: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero ea deserunt itaque non illum error hic tempora, magni consequatur enim, dolorum laboriosam labore veniam tenetur. Placeat quasi eos mollitia soluta",
+    author: "Name Surname",
+    created_at: "12/30/2022",
+    isSaved: false,
+  },
+  {
+    id: 3,
+    title: "lorem 3",
+    body: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero ea deserunt itaque non illum error hic tempora, magni consequatur enim, dolorum laboriosam labore veniam tenetur. Placeat quasi eos mollitia soluta",
+    author: "Name Surname",
+    created_at: "12/30/2022",
+    isSaved: false,
+  },
+  {
+    id: 4,
+    title: "lorem 4",
+    body: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero ea deserunt itaque non illum error hic tempora, magni consequatur enim, dolorum laboriosam labore veniam tenetur. Placeat quasi eos mollitia soluta",
+    author: "Name Surname",
+    created_at: "12/30/2022",
+    isSaved: false,
+  }
+]
 </script>
 
 <template>
@@ -7,7 +40,7 @@
     <div class="header">
       <span>Written by Author Name on Some Date</span>
       <div>
-        <button class="del material-icons">delete</button>
+        <button button class="del material-icons"> delete</button>
         <button class="save material-icons">
           bookmark_border
         </button>
