@@ -5,7 +5,7 @@
             <h3>Create a new posts</h3>
             <div>
                 <label>Post Title</label>
-                <input type="text" :value="post.title" @input="(e) => post.title = e.target.value" />
+                <input type="text" v-model="post.title" />
             </div>
             <div>
                 <label>Post Body</label>
