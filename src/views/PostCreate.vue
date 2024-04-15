@@ -1,6 +1,5 @@
 <template>
     <MyWrapper>
-        {{ post.title }}
         <form>
             <h3>Create a new posts</h3>
             <div>
@@ -9,10 +8,10 @@
             </div>
             <div>
                 <label>Post Body</label>
-                <textarea rows="7"></textarea>
+                <textarea rows="7" v-model="post.body"></textarea>
             </div>
             <div>
-                <button>Add</button>
+                <button @click.prevent="onSubmit">Add</button>
             </div>
         </form>
     </MyWrapper>
@@ -23,8 +22,13 @@ import MyWrapper from '@/components/MyWrapper.vue';
 import { reactive } from 'vue';
 
 const post = reactive({
-    title: "title"
+    title: "",
+    body: ""
 })
+
+const onSubmit = () => {
+    console.log("DATA", post)
+}
 </script>
 
 <style lang="scss" scoped>
