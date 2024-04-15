@@ -36,18 +36,20 @@ const posts = [
 </script>
 
 <template>
-  <div class="wrapper">
-    <div class="header">
-      <span>Written by Author Name on Some Date</span>
-      <div>
-        <button button class="del material-icons"> delete</button>
-        <button class="save material-icons">
-          bookmark_border
-        </button>
+  <div v-for="post in posts" v-bind:key="post.id">
+    <div class="wrapper">
+      <div class="header">
+        <span>Written by Author Name on Some Date</span>
+        <div>
+          <button button class="del material-icons"> delete</button>
+          <button class="save material-icons">
+            bookmark_border
+          </button>
+        </div>
       </div>
+      <h1>Post Title</h1>
+      <p>Post Body</p>
     </div>
-    <h1>Post Title</h1>
-    <p>Post Body</p>
   </div>
 </template>
 
