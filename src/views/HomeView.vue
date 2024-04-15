@@ -39,7 +39,7 @@ const posts = [
   <div v-for="post in posts" v-bind:key="post.id">
     <div class="wrapper">
       <div class="header">
-        <span>Written by Author Name on Some Date</span>
+        <span>Written by {{ post.author }} on {{ post.created_at }}</span>
         <div>
           <button button class="del material-icons"> delete</button>
           <button class="save material-icons">
@@ -47,8 +47,8 @@ const posts = [
           </button>
         </div>
       </div>
-      <h1>Post Title</h1>
-      <p>Post Body</p>
+      <h1>{{ post.title }}</h1>
+      <p>{{ post.body }}</p>
     </div>
   </div>
 </template>
