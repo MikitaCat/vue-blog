@@ -20,6 +20,9 @@
 <script setup>
 import MyWrapper from '@/components/MyWrapper.vue';
 import { reactive, computed } from 'vue';
+import { usePostsStore } from '@/stores/posts';
+
+const postStore = usePostsStore()
 
 const post = reactive({
     title: "",
@@ -32,6 +35,8 @@ const isFormInvalid = computed(() => {
 
 const onSubmit = () => {
     console.log("DATA", post.title, post.body)
+    postStore.addPost(post)
+
 }
 </script>
 

@@ -5,6 +5,7 @@ import { defineStore } from 'pinia'
 // and `Store` (e.g. `useUserStore`, `useCartStore`, `useProductStore`)
 // the first argument is a unique id of the store across your application
 export const usePostsStore = defineStore('posts-store', {
+  //Data
   state() {
     return {
       posts: [
@@ -41,6 +42,19 @@ export const usePostsStore = defineStore('posts-store', {
           isSaved: false
         }
       ]
+    }
+  },
+  //Methods
+  actions: {
+    addPost(post) {
+      this.posts.push({
+        id: this.posts.length + 1,
+        title: post.title,
+        body: post.body,
+        author: 'Randome Name',
+        created_at: new Date().toLocaleDateString(),
+        isSaved: false
+      })
     }
   }
 })
