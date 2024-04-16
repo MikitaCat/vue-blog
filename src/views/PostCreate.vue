@@ -1,6 +1,6 @@
 <template>
     <MyWrapper>
-        <form>
+        <form @submit.prevent="onSubmit">
             <h3>Create a new posts</h3>
             <div>
                 <label>Post Title</label>
@@ -11,7 +11,7 @@
                 <textarea rows="7" v-model="post.body"></textarea>
             </div>
             <div>
-                <button @click.prevent="onSubmit" :disabled="isFormInvalid">Add</button>
+                <button :disabled="isFormInvalid">Add</button>
             </div>
         </form>
     </MyWrapper>
@@ -31,7 +31,7 @@ const isFormInvalid = computed(() => {
 })
 
 const onSubmit = () => {
-    console.log("DATA", post)
+    console.log("DATA", post.title, post.body)
 }
 </script>
 

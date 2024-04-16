@@ -1,5 +1,6 @@
 <template>
     <div>
+        <button @click="onClick(post.id)">Click</button>
         <div class="header">
             <span>Written by {{ post.author }} on {{ post.created_at }}</span>
             <div>
@@ -21,6 +22,13 @@ defineProps({
         required: true
     }
 });
+
+const emit = defineEmits(["myEmit"])
+
+const onClick = (id) => {
+    console.log('Log from PostItem:', id)
+    emit('myEmit', id)
+}
 </script>
 
 <style lang="scss" scoped>
