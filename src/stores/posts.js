@@ -14,7 +14,7 @@ export const usePostsStore = defineStore('posts-store', {
           title: 'lorem',
           body: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero ea deserunt itaque non illum error hic tempora, magni consequatur enim, dolorum laboriosam labore veniam tenetur. Placeat quasi eos mollitia soluta',
           author: 'Name Surname',
-          created_at: '11.01.2020',
+          created_at: '11/01/2020',
           isSaved: false
         },
         {
@@ -22,7 +22,7 @@ export const usePostsStore = defineStore('posts-store', {
           title: 'lorem 2',
           body: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero ea deserunt itaque non illum error hic tempora, magni consequatur enim, dolorum laboriosam labore veniam tenetur. Placeat quasi eos mollitia soluta',
           author: 'Name Surname',
-          created_at: '11.01.2021',
+          created_at: '11/01/2021',
           isSaved: false
         },
         {
@@ -30,7 +30,7 @@ export const usePostsStore = defineStore('posts-store', {
           title: 'lorem 3',
           body: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero ea deserunt itaque non illum error hic tempora, magni consequatur enim, dolorum laboriosam labore veniam tenetur. Placeat quasi eos mollitia soluta',
           author: 'Name Surname',
-          created_at: '11.01.2022',
+          created_at: '11/01/2022',
           isSaved: false
         },
         {
@@ -38,7 +38,7 @@ export const usePostsStore = defineStore('posts-store', {
           title: 'lorem 4',
           body: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero ea deserunt itaque non illum error hic tempora, magni consequatur enim, dolorum laboriosam labore veniam tenetur. Placeat quasi eos mollitia soluta',
           author: 'Name Surname',
-          created_at: '11.01.2023',
+          created_at: '11/01/2023',
           isSaved: false
         }
       ]
@@ -56,6 +56,9 @@ export const usePostsStore = defineStore('posts-store', {
         console.log('DATE A:', dateA)
         const dateB = new Date(b.created_at.split('.').reverse().join('-'))
         console.log('DATE B:', dateA)
+
+        // const dateA = new Date(a.created_at)
+        // const dateB = new Date(b.created_at)
 
         return dateB - dateA
       })
