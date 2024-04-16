@@ -11,7 +11,7 @@
                 <textarea rows="7" v-model="post.body"></textarea>
             </div>
             <div>
-                <button @click.prevent="onSubmit">Add</button>
+                <button @click.prevent="onSubmit" :disabled="isFormInvalid">Add</button>
             </div>
         </form>
     </MyWrapper>
@@ -19,11 +19,15 @@
 
 <script setup>
 import MyWrapper from '@/components/MyWrapper.vue';
-import { reactive } from 'vue';
+import { reactive, computed } from 'vue';
 
 const post = reactive({
     title: "",
     body: ""
+})
+
+const isFormInvalid = computed(() => {
+    return post.title === "" || post.body === ""
 })
 
 const onSubmit = () => {
