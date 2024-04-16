@@ -37,16 +37,16 @@ const posts = [
   }
 ]
 
-const emitTestFunction = (id) => {
-  console.log("Log from HomeView:", id);
-}
+// const emitTestFunction = (id) => {
+//   console.log("Log from HomeView:", id);
+// }
 
 </script>
 
 <template>
   <div v-for="post in   posts  " v-bind:key="post.id">
     <MyWrapper>
-      <PostItem :post="post" @myEmit="emitTestFunction" />
+      <PostItem :post="post" @myEmit="(id) => console.log('Log from HomeView', id)" />
     </MyWrapper>
   </div>
 </template>
