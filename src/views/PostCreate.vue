@@ -21,7 +21,9 @@
 import MyWrapper from '@/components/MyWrapper.vue';
 import { reactive, computed } from 'vue';
 import { usePostsStore } from '@/stores/posts';
+import { useRouter } from 'vue-router';
 
+const router = useRouter()
 const postStore = usePostsStore()
 
 const post = reactive({
@@ -36,6 +38,7 @@ const isFormInvalid = computed(() => {
 const onSubmit = () => {
     console.log("DATA", post.title, post.body)
     postStore.addPost(post)
+    router.push({ name: 'home' })
 
 }
 </script>
