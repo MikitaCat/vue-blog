@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button @click="onClick(post.id)">Click</button>
+        <button @click="onClick(post.id)" class="new-button">Click</button>
         <div class="header">
             <span>Written by {{ post.author }} on {{ post.created_at }}</span>
             <div>
