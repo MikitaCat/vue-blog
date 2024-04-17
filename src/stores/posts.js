@@ -28,7 +28,6 @@ export const usePostsStore = defineStore('posts-store', {
       })
     },
     savedAndSorted() {
-      console.log('WOrKs')
       return this.sorted.filter((el) => el.isSaved === true)
     }
   },
