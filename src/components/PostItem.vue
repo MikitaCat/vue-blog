@@ -4,7 +4,7 @@
         <div class="header">
             <span>Written by {{ post.author }} on {{ post.created_at }}</span>
             <div>
-                <button button class="del material-icons"> delete</button>
+                <button button class="del material-icons" @click="postsStore.deletePost(post.id)"> delete</button>
                 <button class="save material-icons">
                     bookmark_border
                 </button>
@@ -22,6 +22,10 @@ defineProps({
         required: true
     }
 });
+
+import { usePostsStore } from '@/stores/posts';
+
+const postsStore = usePostsStore()
 
 const emit = defineEmits(["myEmit"])
 

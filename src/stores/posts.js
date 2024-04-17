@@ -64,7 +64,6 @@ export const usePostsStore = defineStore('posts-store', {
   //Methods
   actions: {
     addPost(post) {
-      console.log('PUSH', post, new Date().toLocaleDateString())
       this.posts.push({
         id: this.posts.length + 1,
         title: post.title,
@@ -73,6 +72,10 @@ export const usePostsStore = defineStore('posts-store', {
         created_at: new Date().toLocaleDateString(),
         isSaved: false
       })
+    },
+
+    deletePost(id) {
+      this.posts = this.posts.filter((item) => item.id !== id)
     }
   }
 })
