@@ -15,7 +15,7 @@ export const usePostsStore = defineStore('posts-store', {
           body: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero ea deserunt itaque non illum error hic tempora, magni consequatur enim, dolorum laboriosam labore veniam tenetur. Placeat quasi eos mollitia soluta',
           author: 'Name Surname',
           created_at: '11/01/2020',
-          isSaved: false
+          isSaved: true
         },
         {
           id: 2,
@@ -23,7 +23,7 @@ export const usePostsStore = defineStore('posts-store', {
           body: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero ea deserunt itaque non illum error hic tempora, magni consequatur enim, dolorum laboriosam labore veniam tenetur. Placeat quasi eos mollitia soluta',
           author: 'Name Surname',
           created_at: '11/01/2021',
-          isSaved: false
+          isSaved: true
         },
         {
           id: 3,
@@ -59,6 +59,10 @@ export const usePostsStore = defineStore('posts-store', {
         const dateB = new Date(b.created_at.split('.').reverse().join('-'))
         return dateB - dateA
       })
+    },
+    savedAndSorted() {
+      console.log('WOrKs')
+      return this.sorted.filter((el) => el.isSaved === true)
     }
   },
   //Methods
