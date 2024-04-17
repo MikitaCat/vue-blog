@@ -47,19 +47,9 @@ export const usePostsStore = defineStore('posts-store', {
   //Computeds
   getters: {
     sorted() {
-      console.log(
-        'SORT',
-        this.posts.sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
-      )
       return this.posts.sort((a, b) => {
         const dateA = new Date(a.created_at.split('.').reverse().join('-'))
-        console.log('DATE A:', dateA)
         const dateB = new Date(b.created_at.split('.').reverse().join('-'))
-        console.log('DATE B:', dateA)
-
-        // const dateA = new Date(a.created_at)
-        // const dateB = new Date(b.created_at)
-
         return dateB - dateA
       })
     }
