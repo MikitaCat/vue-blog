@@ -5,6 +5,7 @@ import { usePostsStore } from "@/stores/posts"
 import { ref, computed } from 'vue';
 
 const postStore = usePostsStore()
+postStore.getPosts()
 
 const isSavedPostsShown = ref(false)
 const changePostsShown = () => {

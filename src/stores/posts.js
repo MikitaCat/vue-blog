@@ -8,40 +8,7 @@ export const usePostsStore = defineStore('posts-store', {
   //Data
   state() {
     return {
-      posts: [
-        {
-          id: 1,
-          title: 'lorem',
-          body: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero ea deserunt itaque non illum error hic tempora, magni consequatur enim, dolorum laboriosam labore veniam tenetur. Placeat quasi eos mollitia soluta',
-          author: 'Name Surname',
-          created_at: '11/01/2020',
-          isSaved: true
-        },
-        {
-          id: 2,
-          title: 'lorem 2',
-          body: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero ea deserunt itaque non illum error hic tempora, magni consequatur enim, dolorum laboriosam labore veniam tenetur. Placeat quasi eos mollitia soluta',
-          author: 'Name Surname',
-          created_at: '11/01/2021',
-          isSaved: true
-        },
-        {
-          id: 3,
-          title: 'lorem 3',
-          body: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero ea deserunt itaque non illum error hic tempora, magni consequatur enim, dolorum laboriosam labore veniam tenetur. Placeat quasi eos mollitia soluta',
-          author: 'Name Surname',
-          created_at: '11/01/2022',
-          isSaved: false
-        },
-        {
-          id: 4,
-          title: 'lorem 4',
-          body: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero ea deserunt itaque non illum error hic tempora, magni consequatur enim, dolorum laboriosam labore veniam tenetur. Placeat quasi eos mollitia soluta',
-          author: 'Name Surname',
-          created_at: '11/01/2023',
-          isSaved: false
-        }
-      ]
+      posts: []
     }
   },
   //Computeds
@@ -67,6 +34,11 @@ export const usePostsStore = defineStore('posts-store', {
   },
   //Methods
   actions: {
+    getPosts() {
+      fetch(`${import.meta.env.VITE_JSON_SERVER_URL}/posts`)
+        .then((res) => res.json())
+        .then((data) => (this.posts = data))
+    },
     addPost(post) {
       this.posts.push({
         id: this.posts.length + 1,
