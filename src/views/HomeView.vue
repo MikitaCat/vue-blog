@@ -5,7 +5,6 @@ import { usePostsStore } from "@/stores/posts"
 import { ref, computed } from 'vue';
 
 const postStore = usePostsStore()
-postStore.getPosts()
 
 const isSavedPostsShown = ref(false)
 const changePostsShown = () => {
@@ -33,6 +32,7 @@ const postsToShow = computed(() => {
   <div class="header">
     <div>
       <h3>{{ computedHeaderTitle }}</h3>
+      <span v-show="postStore.isLoading" class="material-icons">cached</span>
     </div>
     <button @click="changePostsShown(isSavedPostsShown.value)">
       {{ computedButtonText }}

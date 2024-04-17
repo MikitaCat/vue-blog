@@ -8,7 +8,8 @@ export const usePostsStore = defineStore('posts-store', {
   //Data
   state() {
     return {
-      posts: []
+      posts: [],
+      isLoading: true
     }
   },
   //Computeds
@@ -36,7 +37,10 @@ export const usePostsStore = defineStore('posts-store', {
     getPosts() {
       fetch(`${import.meta.env.VITE_JSON_SERVER_URL}/posts`)
         .then((res) => res.json())
-        .then((data) => (this.posts = data))
+        .then((data) => {
+          this.posts = data
+          this.isLoading = false
+        })
     },
     addPost(post) {
       this.posts.push({
