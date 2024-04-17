@@ -52,6 +52,13 @@ export const usePostsStore = defineStore('posts-store', {
         const dateB = new Date(b.created_at.split('.').reverse().join('-'))
         return dateB - dateA
       })
+    },
+    arrowSorted: (state) => {
+      return state.posts.sort((a, b) => {
+        const dateA = new Date(a.created_at.split('.').reverse().join('-'))
+        const dateB = new Date(b.created_at.split('.').reverse().join('-'))
+        return dateB - dateA
+      })
     }
   },
   //Methods
