@@ -19,6 +19,10 @@ const computedButtonText = computed(() => {
   return isSavedPostsShown.value ? "Show all posts" : "Show saved posts"
 })
 
+const postsToShow = computed(() => {
+  return isSavedPostsShown.value ? postStore.savedAndSorted : postStore.sorted
+})
+
 // const emitTestFunction = (id) => {
 //   console.log("Log from HomeView:", id);
 // }
@@ -34,21 +38,12 @@ const computedButtonText = computed(() => {
     </button>
   </div>
 
-  <template v-if="!isSavedPostsShown">
-    <div v-for="post in postStore.sorted" v-bind:key="post.id">
-      <MyWrapper>
-        <PostItem :post="post" @myEmit="(id) => console.log('Log from HomeView', id)" />
-      </MyWrapper>
-    </div>
-  </template>
 
-  <template v-if="isSavedPostsShown">
-    <div v-for="post in postStore.savedAndSorted" v-bind:key="post.id">
-      <MyWrapper>
-        <PostItem :post="post" @myEmit="(id) => console.log('Log from HomeView', id)" />
-      </MyWrapper>
-    </div>
-  </template>
+  <div v-for="post in postsToShow" v-bind:key="post.id">
+    <MyWrapper>
+      <PostItem :post="post" @myEmit="(id) => console.log('Log from HomeView', id)" />
+    </MyWrapper>
+  </div>
 </template>
 
 <style lang="scss" scoped>
