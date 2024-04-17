@@ -1,12 +1,12 @@
 <template>
     <div>
-        <button @click="onClick(post.id)" class="new-button">Click</button>
+        <button @click="onClick(post.id, post)" class="new-button">Click</button>
         <div class="header">
             <span>Written by {{ post.author }} on {{ post.created_at }}</span>
             <div>
                 <button button class="del material-icons" @click="postsStore.deletePost(post.id)"> delete</button>
-                <button class="save material-icons">
-                    bookmark_border
+                <button class="save material-icons" @click="postsStore.savePost(post.id)">
+                    {{ post.isSaved ? "bookmark" : "bookmark_border" }}
                 </button>
             </div>
         </div>
@@ -29,8 +29,9 @@ const postsStore = usePostsStore()
 
 const emit = defineEmits(["myEmit"])
 
-const onClick = (id) => {
+const onClick = (id, post) => {
     console.log('Log from PostItem:', id)
+    console.log("Is saved post check", post)
     emit('myEmit', id)
 }
 </script>
